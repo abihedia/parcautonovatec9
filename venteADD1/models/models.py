@@ -177,7 +177,7 @@ class SaleOrderHerit(models.Model):
     def ecart_actuel_signe_col(self):
         for rec in self:
             rec.sale_cout_actuel_signe_col = rec.sale_cout_signe_col - rec.sale_cout_actuel_col
-    # group 2
+    ## group 2
     sale_forfait_signe_nb = fields.Integer(string="Forfait copie Signé")
     sale_forfait_actuel_nb = fields.Integer(string="Forfait copie Actuel")
     sale_forfait_actuel_signe_nb = fields.Integer(compute="ecart_forfait_actuel_signe_nb",string="Ecart Actuel/Signé")
