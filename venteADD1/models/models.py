@@ -116,7 +116,7 @@ class SaleOrderHerit(models.Model):
 
 
 
-    #########  Financement page
+    #########  Financement pagee
     #group 1
     sale_type    = fields.Selection([('location', 'Location'), ('vente', 'Vente')],string='Type',default='location')
     sale_leaser  = fields.Many2one( "typeleaser",string='Leaser')
