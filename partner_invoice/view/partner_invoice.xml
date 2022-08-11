@@ -23,7 +23,7 @@
                            <attribute name="attrs">{}</attribute>
                            <attribute name="invisible">1</attribute>
                     </xpath>
-                    <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/label[2]" position="replace"/>
+                    
                     <xpath expr="//form[1]/sheet[1]/group[1]/group[2]/div[4]/field[@name='lang']" position="attributes">
                         <attribute name="attrs">{}</attribute>
                         <attribute name="invisible">1</attribute>
