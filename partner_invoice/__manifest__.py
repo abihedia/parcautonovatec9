@@ -19,6 +19,7 @@
         'contacts',
     ],
     'data': [
+        'view/partner_invoice.xml',
     ],
     'demo': [
     ],
