@@ -353,7 +353,7 @@ class SaleOrderHeritage(models.Model):
                                default=lambda self: self.env['product.product'].search([('id', '=', 6)]))
     abonnements = fields.Many2one('product.product', string="Montant abonnement",
                                              default=lambda self: self.env['product.product'].search([('id', '=', 5)]))
-    Frais_livraison = fields.Many2one('product.product', string="Frais de livraison",
+    Frais_livraison = fields.Many2one('product.product', string="Frais d'installation",
                                   default=lambda self: self.env['product.product'].search([('id', '=', 95)]))
 
     sale_commande_fleet_ids = fields.One2many('listboncommandefleet', inverse_name='devis_id', string="Matériels bon de commande")
