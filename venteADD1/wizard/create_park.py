@@ -51,6 +51,8 @@ class CreatParkWizard(models.Model):
                 'warehouse_id': self.devis_dossier.warehouse_id.id,
                 'state': 'sale',
                 'sale_maintnance': True,
+                'sale_connect':self.devis_dossier.id,
+                'sale_first_bon':True,
             }
             purchase_id1 = self.env['sale.order'].sudo().create(sale_vals)
             purchase_id = purchase_id1.id
