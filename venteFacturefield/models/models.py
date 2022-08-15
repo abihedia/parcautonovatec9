@@ -6,9 +6,7 @@ class SaleMoveHeritfacturee(models.Model):
     sale_date_Facture = fields.Date("Date de prochaine facturation")
     sale_park = fields.Boolean(default=False)
     sale_periode = fields.Integer(default='0')
-    sale_test1 = fields.Integer(default='0')
-    sale_test2 = fields.Integer(default='0')
-    sale_test3 = fields.Integer(default='0')
+    
 
 
     #bon de commande automatique
