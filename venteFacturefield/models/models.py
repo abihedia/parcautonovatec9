@@ -1,12 +1,15 @@
 from odoo import models, fields, api
-
+from datetime import date, datetime, timedelta
 
 class SaleMoveHeritfacturee(models.Model):
     _inherit = 'sale.order'
     sale_date_Facture = fields.Date("Date de prochaine facturation")
     sale_park = fields.Boolean(default=False)
     sale_periode = fields.Integer(default='0')
-    
+    #########first fact
+    sale_connect = fields.Many2one( "sale.order")
+    sale_first_bon = fields.Boolean(default=False)
+    sale_date_de_debut_contrat = fields.Date("Date de début de contrat",default=date.today())
 
 
     #bon de commande automatique
