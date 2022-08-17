@@ -13,6 +13,16 @@
                              <button name="print_delivery" attrs="{'invisible': [('state', '=', 'delivery')]}" string="Bon livraison" type="object" class="oe_highlight"/>
                              <button name="print_delivery" attrs="{'invisible': [('state', '!=', 'delivery')]}" string="Bon livraison" type="object"/>
                     </xpath>
+                            <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                        <page string="Signature" name="signture_livraison">
+                          <group name="groupe1">
+                            <group name="left">
+                              <field widget="signature" name="signature"/>
+                            </group>
+                            <group name="right"/>
+                          </group>
+                        </page>
+                 </xpath>
                 </field>
         </record>
 
