@@ -19,7 +19,7 @@ class SaleOrderLineHerit(models.Model):
             else:
                 rec.designation = False
 
-    ####### add new product prix de vente
+    ####### add new product prix de ventee
     @api.depends('product_id')
     def compute_pricesale(self):
         for rec in self:
