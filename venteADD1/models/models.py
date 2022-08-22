@@ -2,7 +2,10 @@ from odoo import models, fields, api
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
+class PartnerModelHeritt(models.Model):
+    _inherit = 'res.partner'
 
+    partner_parc_ids = fields.One2many('fleet.vehicle', inverse_name='partner_id',string="Matériels")
 
 class SaleOrderLineHerit(models.Model):
     _inherit    = 'sale.order.line'
@@ -37,6 +40,7 @@ class SaleOrderHerit(models.Model):
     sale_total_achat = fields.Monetary(string="Total vente", default=0.0, compute="sale_total_achat_func")
     sale_marge_reel = fields.Monetary(default=0.0, string="Marge réelle", compute="sale_marge_reel_fuc",)
     sale_date_traitement = fields.Date("Date de traitement",compute="sale_total_date_traitement")
+   
 
     ############ zip street cityy
     sale_type_client = fields.Selection([('Nouveau_client', 'Nouveau client'), ('conversion', 'Conversion'),('additionnel', 'Additionnel')], string='Type de vente')
