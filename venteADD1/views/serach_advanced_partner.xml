@@ -1,0 +1,19 @@
+<odoo>
+<data>
+
+
+
+<record id="res_partner_search_advanced" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="parc_machine" string="Dossier N°" filter_domain="[('parc_machine.fleet_dossier_devis','ilike',self)]"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</data>
+</odoo>
