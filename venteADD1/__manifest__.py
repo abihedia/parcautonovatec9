@@ -22,6 +22,7 @@
         'views/sale_order_line.xml',
         'views/partner.xml',
         'views/product_inherit.xml',
+        'views/serach_advanced_partner.xml',
         'wizard/create_park.xml',
     ],
     # only loaded in demonstration mode
