@@ -2,6 +2,10 @@ from odoo import models, fields, api
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
+class PartnerModelHeritt(models.Model):
+    _inherit = 'res.partner'
+
+    partner_parc_ids = fields.One2many('fleet.vehicle', inverse_name='partner_id',string="Matériels")
 
 
 class SaleOrderLineHerit(models.Model):
