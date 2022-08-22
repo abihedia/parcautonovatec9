@@ -9,7 +9,7 @@
         <field name="inherit_id" ref="base.view_res_partner_filter"/>
         <field name="arch" type="xml">
             <xpath expr="//search" position="inside">
-                <field name="parc_machine" string="Dossier N°" filter_domain="[('parc_machine.fleet_dossier_devis','ilike',self)]"/>
+                <field name="sale_order_ids" string="Dossier N°" filter_domain="[('sale_order_ids.sale_dossier','ilike',self)]"/>
             </xpath>
         </field>
     </record>
