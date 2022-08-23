@@ -6,25 +6,26 @@ class FleetSErieInherit(models.Model):
 
     def write(self, vals):
         res = super(FleetSErieInherit, self).write(vals)
-        list_fleet_active = [ a['fleet_id'][0] for a in self.env['fleetserielarticle'].search_read([('fleet_id', '=', self.id)],['fleet_id'])]
+        for rec in self:
+            list_fleet_active = [ a['fleet_id'][0] for a in self.env['fleetserielarticle'].search_read([('fleet_id', '=', rec.id)],['fleet_id'])]
 
-        if list_fleet_active !=[]:
-            record = self.env['fleetserielarticle'].search([('id', '=', list_fleet_active[0])])
-            record.update({
-                'num_serie': self.fleet_serie,
-                'client_id': self.partner_id.id,
-                'fleet_id': self.id,
-                'article_id': self.fleet_artic_id.id,
-                      })
+            if list_fleet_active !=[]:
+                record = self.env['fleetserielarticle'].search([('id', '=', list_fleet_active[0])])
+                record.update({
+                    'num_serie': rec.fleet_serie,
+                    'client_id': rec.partner_id.id,
+                    'fleet_id': rec.id,
+                    'article_id': rec.fleet_artic_id.id,
+                          })
 
-        else:
-            vals = {
-                'num_serie': self.fleet_serie,
-                'client_id': self.partner_id.id,
-                'fleet_id': self.id,
-                'article_id': self.fleet_artic_id.id,
-            }
-            self.env['fleetserielarticle'].create(vals)
+            else:
+                vals = {
+                    'num_serie': rec.fleet_serie,
+                    'client_id': rec.partner_id.id,
+                    'fleet_id': rec.id,
+                    'article_id': rec.fleet_artic_id.id,
+                }
+                self.env['fleetserielarticle'].create(vals)
 
         return res
 
