@@ -5,6 +5,7 @@ class FleetSErieInherit(models.Model):
     _inherit = 'fleet.vehicle'
 
     def write(self, vals):
+        self.ensure_one()
         res = super(FleetSErieInherit, self).write(vals)
         list_fleet_active = [ a['fleet_id'][0] for a in self.env['fleetserielarticle'].search_read([('fleet_id', '=', self.id)],['fleet_id'])]
 
